@@ -9,7 +9,6 @@ namespace assignment {
   int hash(int key, int capacity) {
     assert(capacity > 0);
     // Примечание: не забываем учесть отрицательные значения ключа.
-
     return std::abs(key) % capacity;
   }
 
@@ -25,7 +24,6 @@ namespace assignment {
 
     // изначально, кол-во ключей равно нулю
     num_keys_ = 0;
-
     // выделяем память под ячейки (корзинки) словаря
     buckets_.resize(capacity);
   }
@@ -42,7 +40,8 @@ namespace assignment {
     // ... (ниже представлена часть реализации)
 
     // вычисление индекса ячейки словаря по ключу
-    const int index = hash(key, buckets_.size());
+    const int index = hash(key, capacity());
+
     if (Search(key) == std::nullopt) {
       return false;
     }
@@ -75,7 +74,6 @@ namespace assignment {
         return removed;
       }
     }
-
     return std::nullopt;
   }
 
