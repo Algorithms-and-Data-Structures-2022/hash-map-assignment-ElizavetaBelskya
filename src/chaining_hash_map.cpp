@@ -69,6 +69,7 @@ namespace assignment {
 
         // удаляем элемент из списка по итератору (указателю)
         buckets_[index].erase(it);
+        num_keys_--;
 
         // возвращаем значение удаленного элемента
         return removed;
