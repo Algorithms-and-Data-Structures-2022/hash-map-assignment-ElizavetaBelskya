@@ -42,7 +42,7 @@ namespace assignment {
     // вычисление индекса ячейки словаря по ключу
     const int index = hash(key, capacity());
 
-    if (Search(key) == std::nullopt) {
+    if (Contains(key)) {
       return false;
     }
 
